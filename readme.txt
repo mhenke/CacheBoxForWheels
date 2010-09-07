@@ -9,7 +9,7 @@ requires:
 Simple Instructions
 1) Download Cachebox http://www.coldbox.org/download
 2) Unzip the Cachebox framework is in your webroot (should be under webroot called cachebox)
-3) Place the  CFWheels plugin for CacheBox zip in the plugins folder
+3) Place the  CFWheels plugin for CacheBoxCB zip in the plugins folder
 4) Add the settings listed in the readme.txt to events/onapplicationstart.cfm
 5) Reloaded CFWheels (?reload=true) 
 
@@ -42,7 +42,7 @@ application.wheels.cache.partial = loc.cachebox.addDefaultCache("wheels_partial"
 application.wheels.cache.query = loc.cachebox.addDefaultCache("wheels_query");
 </cfscript>
 
-Place the CacheBox-0.1.zip plugin in the plugins folder of cfwheels
+Place the CacheBoxCB-xx.xx.zip plugin in the plugins folder of cfwheels
 
 Reload your cfwheels application.
 Example: http://localhost/index.cfm?reload=true
