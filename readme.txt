@@ -9,7 +9,7 @@ requires:
 Simple Instructions
 1) Download Cachebox http://www.coldbox.org/download
 2) Unzip the Cachebox framework is in your webroot (should be under webroot called cachebox)
-3) Place the  CFWheels plugin for CacheBoxCB zip in the plugins folder
+3) Place the CFWheels plugin (CacheBoxCB-xx.xx.zip) in the plugins folder
 4) Add the settings listed in the readme.txt to events/onapplicationstart.cfm
 5) Reloaded CFWheels (?reload=true) 
 
