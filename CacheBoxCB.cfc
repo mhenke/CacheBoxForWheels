@@ -1,6 +1,6 @@
 <cfcomponent>
 	 <cffunction name="init">
-		<cfset this.version = "1.0.0">
+		<cfset this.version = "1.0.5">
 		<cfreturn this>
 	</cffunction>
 	
