@@ -1,4 +1,4 @@
-CacheBox provides a one-stop-shop for content caching. 
+CacheBox: The Enterprise ColdFusion Caching Engine, Aggregator and API
 http://www.coldbox.org/download
 http://wiki.coldbox.org/wiki/CacheBox.cfm
 
@@ -8,11 +8,9 @@ requires:
 
 Simple Instructions
 1) Download Cachebox http://www.coldbox.org/download
-2) Unzip the Cachebox framework is in your webroot (should be under
-webroot called cachebox)
+2) Unzip the Cachebox framework is in your webroot (should be under webroot called cachebox)
 3) Place the  CFWheels plugin for CacheBox zip in the plugins folder
-4) Add the settings listed in the readme.txt to events/
-onapplicationstart.cfm
+4) Add the settings listed in the readme.txt to events/onapplicationstart.cfm
 5) Reloaded CFWheels (?reload=true) 
 
 Detailed Instructions
@@ -31,7 +29,6 @@ webroot
 ======cache
 
 In events/onapplicationstart.cfm place this code:
-
 
 <cfscript>
 loc.cacheBox = createObject("component","cachebox.system.cache.CacheFactory").init();
