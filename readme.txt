@@ -49,5 +49,4 @@ Example: http://localhost/index.cfm?reload=true
 
 You should be good to go now.
 
-CacheBox Admin:
-Will be available soon
+CacheBox Admin: Will be available soon
