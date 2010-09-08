@@ -11,9 +11,8 @@
 	<cfargument name="category" type="string" required="false" default="main">
 	<cfscript>
 		var loc = {}; 
-		loc.span = CreateTimeSpan(0,0,arguments.time,0); 
 		loc.agent = application.wheels.cache[arguments.category]; 
-		loc.agent.set(arguments.key,duplicate(arguments.value),loc.span); 
+		loc.agent.set(arguments.key,duplicate(arguments.value)); 
 	</cfscript>
 </cffunction>
 
@@ -35,7 +34,7 @@
 <cffunction name="$removeFromCache" returntype="void" access="public" output="false">
 	<cfargument name="key" type="string" required="true">
 	<cfargument name="category" type="string" required="false" default="main">
-	<cfset application.wheels.cache[arguments.category].expireObject(key) />
+	<cfset application.wheels.cache[arguments.category].clear(key) />
 </cffunction>
 
 <cffunction name="$clearCache" returntype="void" access="public" output="false">
@@ -46,7 +45,7 @@
 		var i = 0; 
 		
 		for (i = 1; i lte arrayLen(agent); i = i + 1) { 
-			application.wheels.cache[agent[i]].expireAll(); 
+			application.wheels.cache[agent[i]].clearAll(); 
 		} 
 	</cfscript>
 	
