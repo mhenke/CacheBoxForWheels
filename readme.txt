@@ -50,3 +50,13 @@ Example: http://localhost/index.cfm?reload=true
 You should be good to go now.
 
 CacheBox Admin: Will be available soon
+
+=== Contributors ==== 
+
+Please add yourself if you helped
+
+Mike Henke (henke.mike@gmail.com) - https://github.com/mhenke/
+
+ ==== Git Workflow for Contributors ====
+
+This project uses the excellent "Git Workflow series":http://www.silverwareconsulting.com/index.cfm/Git-Workflow/ by "Bob Silverburg":https://github.com/bobsilverberg/ for contributions.
