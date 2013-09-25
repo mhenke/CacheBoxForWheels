@@ -3,12 +3,13 @@ http://www.coldbox.org/download
 http://wiki.coldbox.org/wiki/CacheBox.cfm
 
 requires:
-# CFWheels 1.0.5
-# CacheBox 1.0
+# CFWheels 1.2
+# CacheBox 1.5
 
 Simple Instructions
 1) Download Cachebox http://www.coldbox.org/download
 2) Unzip the Cachebox framework is in your webroot (should be under webroot called cachebox)
+2.a) Extract the coldbox folder aswell if you would like the admin area to work
 3) Place the CFWheels plugin (CacheBoxCB-xx.xx.zip) in the plugins folder
 4) Add the settings listed in the readme.txt to events/onapplicationstart.cfm
 5) Reloaded CFWheels (?reload=true) 
@@ -24,23 +25,22 @@ webroot
 ====wheels
 ====views
 ====controllers
+====coldbox
 ====cachebox
 =====system
 ======cache
 
 In events/onapplicationstart.cfm place this code:
 
-<cfscript>
-loc.cacheBox = createObject("component","cachebox.system.cache.CacheFactory").init();
+<!--- Begin Initializing Cachbox --->
 
-application.wheels.cache.sql = loc.cachebox.addDefaultCache("wheels_sql");
-application.wheels.cache.image = loc.cachebox.addDefaultCache("wheels_image");
-application.wheels.cache.main = loc.cachebox.addDefaultCache("wheels_main");
-application.wheels.cache.action = loc.cachebox.addDefaultCache("wheels_action");
-application.wheels.cache.page = loc.cachebox.addDefaultCache("wheels_page");
-application.wheels.cache.partial = loc.cachebox.addDefaultCache("wheels_partial");
-application.wheels.cache.query = loc.cachebox.addDefaultCache("wheels_query");
-</cfscript>
+<cfset loc.cacheBox = createObject("component","cachebox.system.cache.CacheFactory").init()>
+
+<cfloop list="#application.wheels.cacheCategories#" index="category">
+	<cfset application.wheels.caches[category] = loc.cachebox.addDefaultCache("wheels_#category#")>
+</cfloop>
+
+<!--- End Initializing Cachbox --->
 
 Place the CacheBoxCB-xx.xx.zip plugin in the plugins folder of cfwheels
 
@@ -49,11 +49,13 @@ Example: http://localhost/index.cfm?reload=true
 
 You should be good to go now.
 
-CacheBox Admin: Will be available soon
+CacheBox Admin: Available
 
 === Contributors ==== 
 
 Please add yourself if you helped
+
+Tim Badolato (tim@dreamstonemedia.com) - https://github.com/timsayshey
 
 Mike Henke (henke.mike@gmail.com) - https://github.com/mhenke/
 
